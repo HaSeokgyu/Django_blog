@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+
+{% block title %}post_archive_day.html{% endblock %}
+
+{% block content %}
+
+<h1>Post Archives for {{day|date:"N d, Y"}}</h1>
+
+<div>
+	{% for post in object_list %}
+	<li>{{post.modify_dt|date:"Y-m-d"}}
+		<a href="{{post.get_absoulte_url}}"><strong>{{post.title}}</strong></a>
+	</li>
+	{% endfor %}
+</div>
+{% endblock %}
